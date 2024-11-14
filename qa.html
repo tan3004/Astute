@@ -1,0 +1,218 @@
+<!-- qa feed starts here -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Astute - Q&A Page</title>
+    <link rel="stylesheet" href="kyraq&a.css">
+</head>
+<body>
+    <header>
+        <h1>Astute</h1>
+
+        <h2>Q&A</h2>
+    </header>
+
+    <div class="container">
+        <!-- Q&A Section -->
+        <div class="question-card">
+            <div class="user-info">
+                <img src="https://via.placeholder.com/40" alt="User Avatar" class="avatar">
+                <div class="user-details">
+                    <h4>John Doe</h4>
+                    <span>Senior • Computer Science</span>
+                </div>
+                <span class="zings">🔥 5 Zings</span>
+            </div>
+            <div class="question">
+                <p>What are some tips for acing the final exams?</p>
+            </div>
+            <div class="actions">
+                <button class="like-btn">👍 Like</button>
+                <button class="reply-btn">💬 Reply</button>
+                <button class="story-btn">📤 Add to Story</button>
+            </div>
+            <div class="replies">
+                <div class="reply">
+                    <div class="user-info">
+                        <img src="https://via.placeholder.com/30" alt="User Avatar" class="avatar">
+                        <div class="user-details">
+                            <h5>Jane Smith</h5>
+                            <span>Junior • Animation</span>
+                        </div>
+                        <span class="zings">🔥 2 Zings</span>
+                    </div>
+                    <p>Make a study schedule and prioritize subjects you're less confident in.</p>
+                    <div class="actions">
+                        <button class="like-btn">👍 Like</button>
+                        <button class="reply-btn">💬 Reply</button>
+                        <button class="story-btn">📤 Add to Story</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- New Question Button -->
+        <button class="new-question">+ Ask a New Question</button>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Astute. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+<style>
+/* style.css of qa */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #DFF2EB;
+    color: #4A628A;
+    padding: 20px;
+}
+
+/* Updated style for Astute header */
+header h1 {
+    background-color: #4A628A; /* Darker color from the palette */
+    color: #DFF2EB; /* Lighter color for text contrast */
+    padding: 20px;
+    text-align: center;
+    position: relative;
+}
+
+header h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+
+header::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 4px;
+    background-color: #7AB2D3; /* Line color */
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.question-card {
+    background-color: #B9E5E8;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.user-info .avatar {
+    border-radius: 50%;
+}
+
+.user-details {
+    margin-left: 15px;
+}
+
+.user-details h4 {
+    margin-bottom: 5px;
+    color: #4A628A;
+}
+
+.user-details span {
+    font-size: 0.9rem;
+    color: #7AB2D3;
+}
+
+.zings {
+    font-weight: bold;
+    color: #E9573F;
+}
+
+.question p {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+.actions {
+    display: flex;
+    gap: 10px;
+}
+
+button {
+    background-color: #7AB2D3;
+    border: none;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #4A628A;
+}
+
+.replies {
+    margin-top: 20px;
+    border-top: 1px solid #4A628A;
+    padding-top: 15px;
+}
+
+.reply {
+    background-color: #DFF2EB;
+    border-radius: 8px;
+    padding: 10px;
+    margin-top: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.new-question {
+    background-color: #4A628A;
+    border: none;
+    color: #DFF2EB;
+    padding: 12px 25px;
+    border-radius: 8px;
+    cursor: pointer;
+    display: block;
+    margin: 30px auto 0;
+    transition: background-color 0.3s ease;
+}
+
+.new-question:hover {
+    background-color: #7AB2D3;
+}
+
+footer {
+    text-align: center;
+    margin-top: 40px;
+    color: #7AB2D3;
+}
+
+footer p {
+    font-size: 0.9rem;
+}
+/* qa styles end here*/
+</style>
+

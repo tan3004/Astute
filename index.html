@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up & Login Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* General Styles */
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Playfair Display', serif;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #DFF2EB, #B9E5E8);
+            overflow: hidden;
+        }
+
+        /* Background Wave Animation */
+        .wave-container {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        .wave {
+            position: absolute;
+            width: 150%;
+            height: 150%;
+            opacity: 0.5;
+            animation: wave-animation 10s ease-in-out infinite;
+        }
+
+        .wave:nth-child(1) { top: 20%; fill: #4A628A; animation-delay: 0s; }
+        .wave:nth-child(2) { top: 35%; fill: #7AB2D3; animation-delay: -2s; }
+        .wave:nth-child(3) { top: 50%; fill: #B9E5E8; animation-delay: -1s; }
+        .wave:nth-child(4) { top: 65%; fill: #4A628A; animation-delay: -3s; }
+        .wave:nth-child(5) { top: 80%; fill: #7AB2D3; animation-delay: -4s; }
+        .wave:nth-child(6) { top: 90%; fill: #B9E5E8; animation-delay: -5s; }
+
+        @keyframes wave-animation {
+            0% { transform: translateY(0); }
+            25% { transform: translateY(-5%); }
+            50% { transform: translateY(0); }
+            75% { transform: translateY(5%); }
+            100% { transform: translateY(0); }
+        }
+
+        /* Form Container Styling */
+        .form-popup {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 0 50px 0 50px; /* Curved sides */
+            width: 350px;
+            box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .form-header {
+            font-size: 26px;
+            margin-bottom: 20px;
+            text-align: center;
+            color: #4A628A;
+            font-weight: 700;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        label {
+            font-size: 14px;
+            color: #333;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            margin-top: 5px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            font-size: 16px;
+            outline: none;
+            padding-left: 35px; /* Space for icons */
+        }
+
+        .input-icon {
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #aaa;
+        }
+
+        input::placeholder {
+            color: #aaa;
+        }
+
+        input:focus {
+            border-color: #7AB2D3;
+            box-shadow: 0 0 10px rgba(122, 178, 211, 0.6);
+        }
+
+        .btn {
+            background-color: #4A628A;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            width: 100%;
+            cursor: pointer;
+            font-size: 18px;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #7AB2D3;
+        }
+
+        .form-footer {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .form-footer a {
+            color: #4A628A;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .form-footer a:hover {
+            text-decoration: underline;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .social-icons i {
+            font-size: 28px;
+            margin: 0 12px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .social-icons i:hover {
+            color: #4A628A;
+            transform: scale(1.2);
+        }
+
+        /* Hide Login Form Initially */
+        #loginForm {
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Background Waves -->
+    <div class="wave-container">
+        <svg class="wave" viewBox="0 0 1440 320"><path d="M0,224L48,213.3C96,203,192,181,288,186.7C384,192,480,224,576,224C672,224,768,192,864,154.7C960,117,1056,75,1152,69.3C1248,64,1344,96,1392,112L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
+    </div>
+
+    <!-- Sign Up Form -->
+    <div class="form-popup" id="signupForm">
+        <div class="form-header">Sign Up</div>
+        <div class="form-group">
+            <label for="name">Name</label>
+            <i class="fas fa-user input-icon"></i>
+            <input type="text" id="name" placeholder="Enter your name">
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <i class="fas fa-envelope input-icon"></i>
+            <input type="email" id="email" placeholder="Enter your email">
+        </div>
+        <div class="form-group">
+            <label for="number">Mobile Number</label>
+            <i class="fas fa-phone input-icon"></i>
+            <input type="tel" id="number" placeholder="Enter your number">
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <i class="fas fa-lock input-icon"></i>
+            <input type="password" id="password" placeholder="Enter your password">
+        </div>
+        <button class="btn" onclick="redirectToHomePage()">Sign Up</button>
+        <div class="form-footer">
+            <a href="javascript:void(0);" onclick="showLogin()">Already have an account? Login</a>
+        </div>
+    </div>
+
+    <!-- Login Form -->
+    <div class="form-popup" id="loginForm">
+        <div class="form-header">Login</div>
+        <div class="form-group">
+            <label for="loginEmail">Email</label>
+            <i class="fas fa-envelope input-icon"></i>
+            <input type="email" id="loginEmail" placeholder="Enter your email">
+        </div>
+        <div class="form-group">
+            <label for="loginPassword">Password</label>
+            <i class="fas fa-lock input-icon"></i>
+            <input type="password" id="loginPassword" placeholder="Enter your password">
+        </div>
+        <button class="btn" onclick="redirectToHomePage()">Login</button>
+        <div class="form-footer">
+            <a href="javascript:void(0);" onclick="showSignup()">Don't have an account? Sign Up</a>
+        </div>
+    </div>
+
+    <!-- JavaScript for Form Toggle and Sound -->
+    <script>
+        function showLogin() {
+            document.getElementById('signupForm').style.display = 'none';
+            document.getElementById('loginForm').style.display = 'block';
+        }
+
+        function showSignup() {
+            document.getElementById('loginForm').style.display = 'none';
+            document.getElementById('signupForm').style.display = 'block';
+        }
+
+        function playSound() {
+            var audio = new Audio('https://www.soundjay.com/button/beep-07.wav');
+            audio.play();
+        }
+
+        function redirectToHomePage() {
+            // Play sound effect
+            playSound();
+
+            // Redirect to homepage
+            window.location.href = "home.html"; // Replace "homepage.html" with the path to your homepage
+        }
+    </script>
+
+</body>
+</html>

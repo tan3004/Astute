@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Media Website - Notifications</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* General Styling */
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Playfair Display', serif;
+            background: linear-gradient(135deg, #DFF2EB, #B9E5E8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* Notification Badge and List Styling */
+        .notification-icon {
+            position: relative;
+            cursor: pointer;
+            font-size: 24px;
+            margin: 20px;
+        }
+
+        .notification-count {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            background: red;
+            color: white;
+            border-radius: 50%;
+            padding: 4px 8px;
+            font-size: 14px;
+            display: inline-block;
+        }
+
+        .notification-list {
+            display: none;
+            position: absolute;
+            top: 50px;
+            right: 0;
+            background: white;
+            border: 1px solid #ddd;
+            width: 300px;
+            max-height: 300px;
+            overflow-y: auto;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            padding: 10px;
+        }
+
+        .notification-item {
+            padding: 10px;
+            border-bottom: 1px solid #eee;
+            cursor: pointer;
+        }
+
+        .notification-item:hover {
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Notification Icon with Badge -->
+    <div class="notification-icon" onclick="toggleNotifications()">
+        <i class="fas fa-bell"></i>
+        <span id="notificationCount" class="notification-count">0</span>
+    </div>
+
+    <!-- Notification List Dropdown -->
+    <div id="notificationList" class="notification-list">
+        <!-- Notifications will be dynamically added here -->
+    </div>
+
+    <script>
+        let notifications = []; // Store notifications
+
+        // Toggle the visibility of the notification list
+        function toggleNotifications() {
+            const notificationList = document.getElementById('notificationList');
+            notificationList.style.display = notificationList.style.display === 'block' ? 'none' : 'block';
+        }
+
+        // Add a new notification to the list
+        function addNotification(message) {
+            const notificationCount = document.getElementById('notificationCount');
+            const notificationList = document.getElementById('notificationList');
+
+            // Create a new notification item
+            const notificationItem = document.createElement('div');
+            notificationItem.className = 'notification-item';
+            notificationItem.innerText = message;
+            notificationList.appendChild(notificationItem);
+
+            // Add to notifications array and update count
+            notifications.push(message);
+            notificationCount.innerText = notifications.length;
+            notificationCount.style.display = 'inline';
+        }
+
+        // Function to simulate receiving a message from another user
+        function receiveMessageFromClub(user, message) {
+            const notificationMessage = `${user} sent a new message: ${message}`;
+            addNotification(notificationMessage);
+        }
+
+        // Example: Automatically receive a message after 3 seconds
+        setTimeout(() => {
+            receiveMessageFromClub('Alice', 'Hello, check out the latest club updates!');
+        }, 3000);
+    </script>
+
+</body>
+</html>

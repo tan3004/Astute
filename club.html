@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clubs</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="logo">Clubs</div>
+    <!-- Search Bar -->
+    <input type="text" class="search-bar" placeholder="Search Clubs...">
+   
+  </header>
+<main class="feed">
+      
+
+      <!-- Two Sections: My Clubs and Join Clubs -->
+      <div class="clubs-container">
+        <!-- My Clubs Section -->
+        <section class="my-clubs">
+          <h3>My Clubs</h3>
+          <div class="club-list">
+            <!-- Adventure Club -->
+            <div class="club-item">
+              <span class="club-name">Adventure Club</span>
+              <button class="joined-btn">Joined</button>
+            </div>
+            <!-- Cosmos Club -->
+            <div class="club-item">
+              <span class="club-name">Cosmos Club</span>
+              <button class="joined-btn">Joined</button>
+            </div>
+          </div>
+        </section>
+
+        <!-- Join Clubs Section -->
+        <section class="join-clubs">
+          <h3>Join Clubs</h3>
+          <div class="club-list">
+            <!-- Dance Club -->
+            <div class="club-item">
+              <span class="club-name">Dance Club</span>
+              <button class="join-club-btn">Join</button>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+</body>
+</html>
+<style>
+     /* Reset and Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+  
+body {
+    font-family: Arial, sans-serif;
+    background-color: #DFF2EB; /* Light pastel green background */
+    color: #333;
+}
+
+/* Header Styles */
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 1.2rem;
+    background-color: #4A628A; /* Deep blue header */
+    color: white;
+    border-bottom: 2px solid #7AB2D3; /* Blue border at bottom */
+}
+  
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+  
+.top-tabs {
+    display: flex;
+    gap: 2rem; /* More space between buttons */
+}
+  
+.top-tabs a {
+    padding: 0.6rem 1.2rem;
+    background-color: #7AB2D3; /* Soft blue button */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+/* Sidebar Navigation Styles */
+.left-sidebar {
+    width: 250px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+  
+.tab-item {
+    display: block;
+    padding: 1rem;
+    background-color: #DFF2EB;
+    text-align: center;
+    border-radius: 5px;
+    color: #333;
+    text-decoration: none;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    border: 2px solid transparent; /* Initial border for rectangle style */
+}
+
+.tab-item:hover {
+    background-color: #7AB2D3; /* Highlight on hover */
+    border-color: #4A628A;
+}
+  /* Clubs Container Styles */
+.clubs-container {
+    display: flex;
+    gap: 2rem;
+    justify-content: space-between;
+}
+
+.my-clubs, .join-clubs {
+    width: 48%;
+}
+
+.club-list {
+    margin-top: 15px;
+}
+
+.club-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    background-color: #F2F8F3;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.club-name {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.join-club-btn, .joined-btn {
+    background-color: #4A628A;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.join-club-btn:hover, .joined-btn:hover {
+    background-color: #7AB2D3;
+}
+
+h3 {
+    margin-bottom: 10px;
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #4A628A;
+}
+</style>  
+  
